@@ -1,0 +1,12 @@
+.greeting{
+    max-width: 900px;
+    margin: auto;
+    color: #fff;
+    font-size: 20px;
+}
+
+.greeting__title{
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+}

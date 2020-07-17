@@ -1,0 +1,19 @@
+.movie_list {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media screen and (max-width:1024px) {
+        max-width: 800px;
+    }
+}
+
+.spinner{
+    text-align: center;
+    margin: auto;
+}
+.pagination{
+    text-align: center;
+    margin: auto;
+}

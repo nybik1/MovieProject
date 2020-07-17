@@ -1,0 +1,8 @@
+.container{
+    max-width: 1310px;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

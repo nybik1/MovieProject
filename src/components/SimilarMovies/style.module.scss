@@ -1,0 +1,36 @@
+.similarMovies {
+display: grid;
+grid-template-columns: minmax(0px,200px) minmax(0px,200px) minmax(0px,200px);
+gap: 10px;
+@media screen and (max-width:1024px) {
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-around;
+}
+}
+
+.moviePosterWrapper img {
+    max-width: 100%;
+}
+
+.similarMovie {
+    cursor: pointer;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.similarMovie img {
+    max-width: 100%;
+}
+
+
+.similar__title{
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+}

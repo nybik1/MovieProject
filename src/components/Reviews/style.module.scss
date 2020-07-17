@@ -1,0 +1,39 @@
+.movie__reviews{
+    max-width: 960px;
+}
+
+.review{
+    height: 110px;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+
+.reviews__title{
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+}
+
+
+
+.movie__reviewAuthor{
+    font-size: 20px;
+    color: #fff;
+}
+
+.full {
+    height: auto;
+    overflow: visible;
+}
+
+.ant-modal-body{
+    padding: 0px;
+}
