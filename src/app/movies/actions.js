@@ -16,7 +16,6 @@ export const loadMovies = ({ page = 1 } = {}) => (dispatch) => {
                 type: LOAD_MOVIES_FULFILLED, payload: {
                     total: data.total_results,
                     items: data.results,
-                    page
                 }
             })
         })

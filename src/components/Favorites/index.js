@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import MovieItem from './../movieItem';
+import MovieItem from '../MovieItem';
 import s from './style.module.scss';
 import { Link } from 'react-router-dom';
 import backBtn from './../../imgs/back.svg';
 
 
-class FavoriteMovies extends Component {
+function FavoriteMovies() {
+    const favorites = window.JSON.parse(localStorage.getItem('favorites'));
 
-
-    render() {
-        const favorites = window.JSON.parse(localStorage.getItem('favorites'));
-        return (
-            <React.Fragment>
-                <Link className='movie__btnBack' to='/'><img alt='btnBack' src={backBtn} /> </Link>
-                <div className={s.favorites__movie}>
-                    {favorites.map(movie => <div>
-                        <MovieItem key={movie.id}
-                            movie={movie} >
-                        </MovieItem>))
+    return (
+        <React.Fragment>
+            <Link className='movie__btnBack' to='/'><img alt='btnBack' src={backBtn} /> </Link>
+            <div className={s.favorites__movie}>
+                {favorites.map(movie => <div>
+                    <MovieItem key={movie.id}
+                        movie={movie} >
+                    </MovieItem>))
                 </div>)}
-                </div>
-            </React.Fragment>
-        )
-    }
+            </div>
+        </React.Fragment>
+    )
 }
 
 

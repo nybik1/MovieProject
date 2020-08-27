@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 export default configureStore({
   reducer: {
     movies: moviesReducer,
-    search: { items: [] },
   },
   middleware: [thunk],
   devTools: true

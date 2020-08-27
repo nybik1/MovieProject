@@ -10,11 +10,15 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 export default function Similar({ movieId }) {
     const [similarMovies, setSimilar] = useState([]);
     useEffect(() => {
+        let mounted = true;
         fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=4fbb4691e328ec322d3358761a861113`)
             .then((res) => res.json())
             .then((data) => {
-                setSimilar(data.results)
+                if (mounted)
+                    setSimilar(data.results)
             })
+
+        return () => mounted = false;
     }, [movieId]);
 
 

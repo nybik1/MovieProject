@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
-import { loadMovies, searchMovies, } from './app/movies/actions';
+import { loadMovies } from './app/movies/actions';
 import {
   BrowserRouter as Router, Route,
 } from "react-router-dom";
 import MovieListWrapper from './components/MovieListWrapper';
 import MovieDetails from './components/MovieDetails/MovieDetails';
-// import Nav from './components/Nav';
 import About from './components/About';
 import FavoriteMovies from './components/Favorites';
-
+import ActorDetails from './components/ActorDetails';
 
 
 
 
 class App extends Component {
-
-  // state = {
-  //   isSearch: false
-  // }
-
-
 
   componentDidMount() {
     this.props.loadMovies();
@@ -42,6 +35,7 @@ class App extends Component {
         <Route path='/movie/:id' exact component={MovieDetails} />
         <Route path='/about' exact component={About} />
         <Route path='/favorites' exact component={FavoriteMovies} />
+        <Route path='/actor/:id' exact component={ActorDetails}></Route>
       </Router>
     );
   }
@@ -54,4 +48,4 @@ export default connect(({ movies: { loading, error, total } }) => ({
   total,
 
 
-}), { loadMovies, searchMovies })(App);  
+}), { loadMovies })(App);  

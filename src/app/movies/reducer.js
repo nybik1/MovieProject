@@ -2,9 +2,10 @@ import {
     LOAD_MOVIES_PENDING,
     LOAD_MOVIES_FULFILLED,
     LOAD_MOVIES_REJECTED,
-    GET_MOVIE
+    GET_MOVIE,
+    SEARCH_MOVIES
 } from './actions';
-import { SEARCH_MOVIES } from './actions';
+
 
 
 

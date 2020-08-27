@@ -1,0 +1,76 @@
+.actorBlock{
+    display: flex;
+    color: white;
+    font-family: 'Arvo', serif;
+    font-size: 14px;
+
+}
+
+.actorPoster{
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+
+.actorSocial{
+    display: flex;
+    max-width: 200px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.actorSocialIcon{
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.actorInfo {
+    margin-left: 10px;
+}
+
+.actorName {
+    color: #fff;
+    font-size: 50px;
+}
+
+.actorPhotos{
+    display: flex;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.actorPhoto {
+    margin-right: 10px;
+    max-width: 100px;
+}
+
+.actorMoviesTitle{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.actorMovies {
+    display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2vw;
+    max-width: 1400px;
+    margin: auto;
+    justify-content: space-between;
+
+    
+}
+
+.actorMovie {
+    max-width: 300px;
+    max-height: 450px;
+    &:hover{
+        transform: scale(1.1, 1.1);
+        transition: all .5s ease;
+    }
+img {
+    max-width: 100%;
+}
+}
+
