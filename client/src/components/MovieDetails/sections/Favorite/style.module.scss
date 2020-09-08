@@ -1,0 +1,40 @@
+.addFavorite{
+    color: #fff;
+    background: #1890ff;
+    border-color: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    height: 40px;
+    padding: 4px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover{
+        background-color: #5babf5;
+    }
+    @media screen and (max-width:1160px){
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width:768px) {
+        font-size: 16px;
+        height: 40px;
+        padding: 5px 7px;
+        font-size: 13px;
+    }
+}
+
+.inFavorites{
+    background-color: #f55b5b;
+    &:hover{
+        background-color: #f27777
+    }
+}

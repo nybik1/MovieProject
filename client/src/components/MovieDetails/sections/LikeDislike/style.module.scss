@@ -1,0 +1,47 @@
+.like{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover{
+        svg{
+            fill: #f55b5b;
+            
+        }
+    }
+}
+
+.like ~ svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dislike{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover{
+        svg{
+            fill: royalblue;
+        }
+    }
+}
+
+.dislike ~ svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.liked{
+    fill: #f55b5b;
+}
+
+.disliked{
+    fill:royalblue;
+}
