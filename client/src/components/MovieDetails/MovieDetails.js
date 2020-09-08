@@ -132,7 +132,7 @@ class movieDetail extends Component {
                                 <div className={s.movie_rating}>
                                 </div>
                                 <div className={s.movie_action_wrapper}>
-                                    <LikeDislikes video videoId={this.props.match.params.id} userFrom={localStorage.getItem('userId')} />
+                                    <LikeDislikes video videoId={this.props.match.params.id} userId={localStorage.getItem('userId')} />
                                     <Favorite movieInfo={this.props.movie} movieId={this.props.match.params.id} userFrom={localStorage.getItem('userId')} />
                                     <button className={s.movie_trailer_btn} onClick={this.showModal}>Watch trailer</button>
                                     {this.state.visible && this.state.teaser.map(item =>

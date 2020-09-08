@@ -163,7 +163,7 @@ function LikeDislikes(props) {
     return (
         <React.Fragment>
             <div className={s.like} onClick={onLike}>
-                <svg onClick={onLike} width='48' height='48' className={cs(null, { [s.liked]: LikeAction === 'liked' })} >
+                <svg width='48' height='48' className={cs(null, { [s.liked]: LikeAction === 'liked' })} >
                     <use href={sprite + '#like'}>
                     </use>
                 </svg>
