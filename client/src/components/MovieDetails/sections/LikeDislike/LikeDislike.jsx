@@ -25,6 +25,7 @@ function LikeDislikes(props) {
 
 
     useEffect(() => {
+        let mounted = true;
 
         Axios.post('/api/like/getLikes', variable)
             .then(response => {
@@ -62,7 +63,7 @@ function LikeDislikes(props) {
                     alert('Failed to get dislikes')
                 }
             })
-
+        return () => mounted = false;
     }, [])
 
 

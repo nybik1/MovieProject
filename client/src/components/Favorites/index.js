@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import MovieItem from '../MovieItem';
 import axios from 'axios';
 import backBtn from './../../imgs/back.svg'
-import { set } from 'mongoose';
 import s from './style.module.scss';
 
 function FavoriteMovies(props) {

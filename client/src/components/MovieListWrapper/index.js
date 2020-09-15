@@ -79,7 +79,7 @@ class MovieListWrapper extends PureComponent {
     render() {
 
         // const { selectedOption } = this.props.selectedOption;
-        console.log(this.props.selectedOption);
+        // console.log(this.props.selectedOption);
 
         return (
             <>

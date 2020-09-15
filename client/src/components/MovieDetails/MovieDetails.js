@@ -1,9 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-import { getMovie } from '../../app/movies/actions/movie_actions';
 
 import s from './style.module.scss';
 import '@brainhubeu/react-carousel/lib/style.css';
@@ -12,8 +9,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 import Carousel from '@brainhubeu/react-carousel';
-import { Button, Modal } from 'antd';
-import Reviews from './sections/Reviews';
+import { Modal } from 'antd';
 import Comments from './sections/Comments';
 import Similar from './../SimilarMovies';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -74,15 +70,11 @@ function MovieDetail(props) {
 
 
     const showModal = () => {
-        setVisible({
-            visible: true,
-        });
+        setVisible(true);
     };
 
-    const closeModal = e => {
-        setVisible({
-            visible: false,
-        });
+    const closeModal = () => {
+        setVisible(false);
 
     };
 
@@ -145,11 +137,11 @@ function MovieDetail(props) {
                                 <Favorite movieInfo={movie} movieId={props.match.params.id} userFrom={localStorage.getItem('userId')} />
                                 <button className={s.movie_trailer_btn} onClick={showModal}>Watch trailer</button>
                                 {visible && teaser.map(item =>
-                                    <Modal width='960px' footer={null} title={props.movie.original_title} visible={visible} onCancel={closeModal}>
+                                    <Modal width='960px' footer={null} title={movie.original_title} visible={visible} onCancel={closeModal} key={movie.id}>
                                         <iframe title='video' width='100%' height='480px'
                                             src={`https://www.youtube.com/embed/${item.key}`}
-                                            frameborder="0"
-                                            allowfullscreen></iframe>
+                                            frameBorder="0"
+                                            allowFullScreen></iframe>
                                     </Modal>)}
 
                             </div>

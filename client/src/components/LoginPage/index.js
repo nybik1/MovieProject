@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import { loginUser } from "../../app/movies/actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Form, Input, Button, Checkbox, Typography } from 'antd';
+import { Form, Input, Checkbox, Typography } from 'antd';
 import { useDispatch } from "react-redux";
 import s from './style.module.scss';
 
