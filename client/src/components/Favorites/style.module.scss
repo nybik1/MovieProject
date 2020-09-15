@@ -1,4 +1,4 @@
-.favorites__movie{
+.favorite__movie{
     max-width: 1310px;
     display: flex;
     margin: auto;
@@ -6,20 +6,10 @@
     justify-content: space-between;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+.favoriteBtnBack{
+  background-color: #000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
   

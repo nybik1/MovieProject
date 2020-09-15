@@ -15,7 +15,7 @@ flex-direction: column;
 .actorSocial{
     display: flex;
     max-width: 200px;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 .actorSocialIcon{
@@ -72,5 +72,15 @@ flex-direction: column;
 img {
     max-width: 100%;
 }
+}
+
+
+.actorBackBtn{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    background-color:  #f55b5b;
+    border-radius: 5px;
 }
 

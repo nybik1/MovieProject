@@ -10,6 +10,10 @@ import {
     Form,
     Input,
 } from 'antd';
+import { set } from "mongoose";
+
+
+
 
 const formItemLayout = {
     labelCol: {
@@ -34,8 +38,29 @@ const tailFormItemLayout = {
     },
 };
 
+
+
+
 function RegisterPage(props) {
+    const [avatar, setAvatar] = React.useState('');
+    const defaultAvatar = 'https://via.placeholder.com/150'
+
+
+    const handleChangeImage = (evt) => {
+        console.log("Uploading");
+        const reader = new FileReader();
+        const file = evt.target.files[0];
+
+        reader.onload = function (upload) {
+            setAvatar(upload.target.result)
+        };
+        reader.readAsDataURL(file);
+    };
+
+
     const dispatch = useDispatch();
+
+
     return (
 
         <Formik
@@ -65,7 +90,7 @@ function RegisterPage(props) {
                         email: values.email,
                         password: values.password,
                         username: values.username,
-                        image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
+                        image: avatar ? avatar.base64 : `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
                     };
 
                     dispatch(registerUser(dataToSubmit)).then(response => {
@@ -164,11 +189,15 @@ function RegisterPage(props) {
                                 )}
                             </Form.Item>
 
-                            <Form.Item {...tailFormItemLayout}>
-                                <button className={s.registerSubmit} onClick={handleSubmit} type='submit' disabled={isSubmitting}>
-                                    Submit
-                </button>
-                            </Form.Item>
+                            <div className={s.chooseAvatar__wrapper}>
+                                <input type="file" id='avatar' className={s.input__avatar} onChange={handleChangeImage} />
+                                <label className={s.label__avatar} htmlFor='avatar'>Choose avatar</label>
+                                <img src={avatar ? avatar : defaultAvatar} alt='Choose your avatar'></img>
+                            </div>
+
+                            <button className={s.registerSubmit} onClick={handleSubmit} type='submit' disabled={isSubmitting}>
+                                Submit
+                            </button>
                         </Form>
                     </div>
                 );

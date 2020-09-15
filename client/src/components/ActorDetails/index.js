@@ -60,7 +60,7 @@ function ActorDetails(props) {
                 <div className={s.actorBlock}>
                     <div className={s.actorPoster}>
                         <img alt='actorPhoto' src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${actorInfo.profile_path}`}></img>
-                        <button onClick={() => props.history.go(-1)}><img alt='btnBack' src={backBtn} /> </button>
+                        <button className={s.actorBackBtn} title='Back to movie details' onClick={() => props.history.go(-1)}><img alt='btnBack' src={backBtn} /> </button>
                     </div>
                     <div className={s.actorInfo}>
                         <h2 className={s.actorName}>{actorInfo.name}</h2>

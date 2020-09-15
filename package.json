@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.3",
+    "react-file-base64": "^1.0.3",
     "react-redux": "^5.1.2",
     "socket.io": "^2.3.0"
   },

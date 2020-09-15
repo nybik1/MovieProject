@@ -17,6 +17,7 @@ function Favorite(props) {
     };
 
 
+
     const onClickFavorite = () => {
 
         if (user.userData && !user.userData.isAuth) {

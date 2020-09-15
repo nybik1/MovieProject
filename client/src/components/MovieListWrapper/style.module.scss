@@ -16,15 +16,17 @@
 
 .search__form{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .search__input {
-    height: 40px;
-    width: 100%;
-    border-radius: 10px;
+    height: 36px;
+    flex: 0 0 100%;
+    border-radius: 10%;
     outline: none;
     border: none;
-    font-size: 25px;
+    font-size: 40px;
     margin-bottom: 30px;
 }
 
@@ -34,5 +36,10 @@
 
 .pagination {
     text-align: center;
+}
+
+.search__genres{
+    color: black;
+    flex: 0 0 45%;
 }
 

@@ -3,7 +3,8 @@ import {
     LOAD_MOVIES_FULFILLED,
     LOAD_MOVIES_REJECTED,
     GET_MOVIE,
-    SEARCH_MOVIES
+    SEARCH_MOVIES,
+    SET_FILTER_MOVIE
 } from '../actions/movie_actions';
 
 
@@ -17,6 +18,7 @@ const initialState = {
     total: 0,
     movie: {},
     isSearch: false,
+    selectedOption: [],
 }
 
 function movies(state = initialState, action) {
@@ -55,6 +57,12 @@ function movies(state = initialState, action) {
                 ...state,
                 movie: action.payload,
                 loading: false
+            }
+
+        case SET_FILTER_MOVIE:
+            return {
+                ...state,
+                selectedOption: action.payload.genre,
             }
         default:
             return state

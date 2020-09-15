@@ -172,11 +172,14 @@
 
 
 .movie__btnBack{
-    max-width: 150px;
+    max-width: 50px;
     max-height: 50px;
     border-radius: 5px;
     background-color:rgba(0,0,0, .5);
     z-index: 2;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 .overview__title{

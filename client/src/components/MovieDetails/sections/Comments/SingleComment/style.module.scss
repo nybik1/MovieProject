@@ -1,0 +1,48 @@
+.singleComment{
+    background-color: rgba($color: #1890ff, $alpha: .4);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #fff;
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        max-width: 100%;
+
+    }
+
+    &__author{
+        color: #fff;
+        margin: 0;
+    }
+
+    &__text{
+        color: #fff;
+        
+    }
+
+    &__avatar{
+        width: 80px;
+        height: 80px;
+        display: flex;
+
+        img{
+            max-width: 100%;
+            border-radius: 20%;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+           
+        }
+    }
+}
+
+.likeDislike__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+}

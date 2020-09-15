@@ -22,34 +22,23 @@ class App extends Component {
 
   componentDidMount() {
     this.props.loadMovies();
-
-    if (!window.localStorage.getItem('favorites')) {
-      window.localStorage.setItem('favorites', '[]')
-    }
   }
-
-
-
 
   render() {
 
     return (
       <Router>
         <Route path='/' exact component={Auth(MovieListWrapper, false)} />
-        <Route path='/movie/:id' exact component={MovieDetails} />
+        <Route path='/movie/:id' exact component={Auth(MovieDetails, null)} />
         <Route path='/about' exact component={About} />
-        <Route path='/favorites' exact component={FavoriteMovies} />
+        <Route path='/favorites' exact component={Auth(FavoriteMovies, null)} />
         <Route path='/register' component={Auth(RegisterPage, false)} />
         <Route path='/login' component={Auth(LoginPage, false)} />
-        <Route path='/actor/:id' exact component={ActorDetails}></Route>
+        <Route path='/actor/:id' exact component={Auth(ActorDetails, null)} />
       </Router>
     );
   }
 
 }
 
-export default connect(({ movies: { loading, error, total } }) => ({
-  loading,
-  error,
-  total,
-}), { loadMovies })(App);  
+export default connect(null, { loadMovies })(App);  

@@ -4,6 +4,7 @@
     padding: 20px;
     background: #1890ff;
     border-color: #1890ff;
+    border-radius: 10px;
 }
 
 
@@ -16,7 +17,7 @@
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
     height: 32px;
     width: 100px;
-  margin: auto;
+  margin: 10px auto 0 ;
     padding: 4px 15px;
     font-size: 14px;
     border-radius: 2px;
@@ -32,4 +33,24 @@
     &:hover{
         background-color: #f27777
     }
+}
+
+.input__avatar{   
+    display: none !important; 
+}
+
+.label__avatar{
+    color: #fff;
+    border: 2px solid #f27777;
+    font-size: 20px !important;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.chooseAvatar__wrapper{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
 }

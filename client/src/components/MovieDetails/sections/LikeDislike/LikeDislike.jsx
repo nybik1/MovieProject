@@ -28,7 +28,7 @@ function LikeDislikes(props) {
 
         Axios.post('/api/like/getLikes', variable)
             .then(response => {
-                console.log('getLikes', response.data)
+                // console.log('getLikes', response.data)
 
                 if (response.data.success) {
                     //How many likes does this video or comment have 
@@ -47,7 +47,7 @@ function LikeDislikes(props) {
 
         Axios.post('/api/like/getDislikes', variable)
             .then(response => {
-                console.log('getDislike', response.data)
+                // console.log('getDislike', response.data)
                 if (response.data.success) {
                     //How many likes does this video or comment have 
                     setDislikes(response.data.dislikes.length)
@@ -167,14 +167,14 @@ function LikeDislikes(props) {
                     <use href={sprite + '#like'}>
                     </use>
                 </svg>
-                <span>{Likes}</span>
+                <span className={s.likeDislike__count}>{Likes}</span>
             </div>
             <div className={s.dislike} onClick={onDisLike}>
                 <svg width='48' height='48' className={cs(null, { [s.disliked]: DislikeAction === 'disliked' })} >
                     <use href={sprite + '#dislike'}>
                     </use>
                 </svg>
-                <span>{Dislikes}</span>
+                <span className={s.likeDislike__count} >{Dislikes}</span>
             </div>
         </React.Fragment>
     )
