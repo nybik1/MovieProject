@@ -22,8 +22,8 @@ function RightMenu(props) {
     if (user.userData && !user.userData.isAuth) {
         return (
             <div className={s.menu_wrapper}>
-                <Link className={s.signUp} to='/register'>Sign Up</Link>
-                <Link className={s.signIn} to='/login'>Sign In</Link>
+                <Link className={s.signUp} to='/register'>Create account</Link>
+                <Link className={s.signIn} to='/login'>Login</Link>
             </div>
         )
     } else {

@@ -174,7 +174,6 @@ function MovieDetail(props) {
                                 slidesPerPage={3}
                                 slidesPerScroll={2}
                                 infinite
-                                lazyLoad
                                 animationSpeed={3000}
                                 arrows>
 
@@ -189,7 +188,6 @@ function MovieDetail(props) {
                                 slidesPerPage={10}
                                 slidesPerScroll={5}
                                 infinite
-                                lazyLoad
                                 animationSpeed={3000}
                                 arrows>
                                 {cast.map(item =>

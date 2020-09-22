@@ -17,6 +17,7 @@ export const loadMovies = ({ page = 1, genres = '' } = {}) => (dispatch) => {
                 type: LOAD_MOVIES_FULFILLED, payload: {
                     total: data.total_results,
                     items: data.results,
+                    page
                 }
             })
         })
@@ -27,13 +28,14 @@ export const loadMovies = ({ page = 1, genres = '' } = {}) => (dispatch) => {
 
 
 
-export const searchMovies = ({ query, page, genres } = {}) => (dispatch) => {
+export const searchMovies = ({ query, page = 1 } = {}) => (dispatch) => {
     axios(`https://api.themoviedb.org/3/search/movie?api_key=4fbb4691e328ec322d3358761a861113&page=${page}&query=${query}`)
         .then(({ data }) => {
             dispatch({
                 type: SEARCH_MOVIES, payload: {
                     total: data.total_results,
                     items: data.results,
+                    page
                 }
             })
         })

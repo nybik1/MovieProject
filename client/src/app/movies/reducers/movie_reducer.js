@@ -16,6 +16,7 @@ const initialState = {
     loading: false,
     error: null,
     total: 0,
+    currentPage: 1,
     movie: {},
     isSearch: false,
     selectedOption: [],
@@ -30,6 +31,7 @@ function movies(state = initialState, action) {
                 total: action.payload.total,
                 loading: false,
                 isSearch: false,
+                currentPage: action.payload.page,
             }
         case LOAD_MOVIES_PENDING:
             return {
@@ -51,6 +53,7 @@ function movies(state = initialState, action) {
                 total: action.payload.total,
                 loading: false,
                 isSearch: true,
+                currentPage: action.payload.page
             }
         case GET_MOVIE:
             return {

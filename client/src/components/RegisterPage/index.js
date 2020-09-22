@@ -77,7 +77,7 @@ function RegisterPage(props) {
                         email: values.email,
                         password: values.password,
                         username: values.username,
-                        image: avatar ? avatar.base64 : `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
+                        image: avatar ? avatar : `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
                     };
 
                     dispatch(registerUser(dataToSubmit)).then(response => {

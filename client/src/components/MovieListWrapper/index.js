@@ -33,8 +33,6 @@ class MovieListWrapper extends PureComponent {
             return this.props.searchMovies({ page, query: this.state.inputValue, genres: genres })
         }
         this.props.loadMovies({ page, genres: genres })
-        debugger;
-
     }
     handleChange = selectedOption => {
         this.setState({ selectedOption }, this.showByFilter);
@@ -96,7 +94,7 @@ class MovieListWrapper extends PureComponent {
                     </div>
                     <MovieList />
                     <div className={s.pagination}>
-                        <Pagination defaultCurrent={1} total={this.props.total} pageSize={20} showSizeChanger={false} onChange={this.handlePageChange} />
+                        <Pagination defaultCurrent={1} current={this.props.currentPage} total={this.props.total} pageSize={20} showSizeChanger={false} onChange={this.handlePageChange} />
                     </div>
                 </div >
             </>
@@ -104,7 +102,8 @@ class MovieListWrapper extends PureComponent {
     }
 }
 
-export default connect(({ movies: { total, selectedOption } }) => ({
+export default connect(({ movies: { total, selectedOption, currentPage } }) => ({
     total,
     selectedOption,
+    currentPage,
 }), { loadMovies, searchMovies, filterMovies })(MovieListWrapper);
