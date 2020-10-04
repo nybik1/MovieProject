@@ -1,7 +1,54 @@
 .menu_wrapper {
     display: flex;
-    margin-left: auto;
-    width: 400px;
+    width: 600px;
+    color: #ffff;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu__user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    position: relative;
+
+    img{
+        max-width: 100%;
+        max-height: 65px;
+        border-radius: 10%;        
+    }
+}
+
+.menu__welcome{
+    padding: 0;
+    margin: 0;
+}
+
+.menu__nav{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: -10;
+    top:-100px;
+    right: 45px;
+    transition: all .5s ease;
+}
+
+.menu__nav_active{
+    top: 70px;
+    z-index: 1;
+}
+
+.menu__toggler{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.menu__toggler_reverse{
+    transform: rotate(180deg);
 }
 
 
@@ -14,7 +61,7 @@
     -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
     height: 32px;
-    flex: 0 0 45%;
+    flex: 0 0 35%;
     margin-left: auto;
     padding: 4px 15px;
     font-size: 14px;
@@ -43,4 +90,5 @@
 }
 .logOut{
     @extend .signUp;
+    margin-top: 5px;
 }

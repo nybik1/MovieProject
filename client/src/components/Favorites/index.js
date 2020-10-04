@@ -23,18 +23,6 @@ function FavoriteMovies(props) {
         return () => mounted = false;
     }, [])
 
-    // const fetchFavoredMovie = () => {
-    //     axios.post('/api/favorite/getFavoredMovie', variable)
-    //         .then(response => {
-    //             if (response.data.success) {
-    //                 // console.log(response.data.favorites)
-    //                 setFavorites(response.data.favorites)
-    //             } else {
-    //                 alert('Failed to get subscription videos')
-    //             }
-    //         })
-    // }
-
 
     return (
         <>

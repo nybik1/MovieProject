@@ -16,7 +16,7 @@ router.post("/saveComment", auth, (req, res) => {
         if (err) return res.json({ success: false, err })
 
         Comment.find({ '_id': comment._id })
-            .populate('writer')
+            .populate('userFrom')
             .exec((err, result) => {
                 if (err) return res.json({ success: false, err })
                 return res.status(200).json({ success: true, result })
@@ -26,12 +26,28 @@ router.post("/saveComment", auth, (req, res) => {
 
 router.post("/getComments", (req, res) => {
 
-    Comment.find({ "postId": req.body.movieId })
-        .populate('writer')
+    // let variable = {};
+    // if (req.body.movieId) {
+    //     variable = { postId: req.body.movieId }
+    // }
+    // else {
+    //     variable = { writer: req.body.writer }
+    // }
+
+    Comment.find({ 'postId': req.body.movieId })
+        .populate('userFrom')
         .exec((err, comments) => {
             if (err) return res.status(400).send(err)
             res.status(200).json({ success: true, comments })
         })
 });
+
+router.post('/getUserComments', (req, res) => {
+    Comment.find({ "userFrom": req.body.userFrom })
+        .exec((err, comments) => {
+            if (err) return res.status(400).send(err)
+            res.status(200).json({ success: true, comments })
+        })
+})
 
 module.exports = router;

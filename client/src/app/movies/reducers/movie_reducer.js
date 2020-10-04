@@ -2,9 +2,12 @@ import {
     LOAD_MOVIES_PENDING,
     LOAD_MOVIES_FULFILLED,
     LOAD_MOVIES_REJECTED,
+    LOAD_TRENDING_MOVIES,
+    LOAD_TOP_MOVIES,
     GET_MOVIE,
     SEARCH_MOVIES,
-    SET_FILTER_MOVIE
+    SET_FILTER_MOVIE,
+    SET_QUERY
 } from '../actions/movie_actions';
 
 
@@ -12,6 +15,8 @@ import {
 
 const initialState = {
     list: [],
+    trending: [],
+    toprated: [],
     loaded: false,
     loading: false,
     error: null,
@@ -20,6 +25,7 @@ const initialState = {
     movie: {},
     isSearch: false,
     selectedOption: [],
+    query: ''
 }
 
 function movies(state = initialState, action) {
@@ -33,6 +39,18 @@ function movies(state = initialState, action) {
                 isSearch: false,
                 currentPage: action.payload.page,
             }
+
+        case LOAD_TRENDING_MOVIES:
+            return {
+                ...state,
+                trending: action.payload.items
+            }
+        case LOAD_TOP_MOVIES:
+            return {
+                ...state,
+                toprated: action.payload.items
+            }
+
         case LOAD_MOVIES_PENDING:
             return {
                 ...state,
@@ -66,6 +84,12 @@ function movies(state = initialState, action) {
             return {
                 ...state,
                 selectedOption: action.payload.genre,
+            }
+        case SET_QUERY:
+            return {
+                ...state,
+                query: action.payload.query,
+                isSearch: action.payload.isSearch,
             }
         default:
             return state

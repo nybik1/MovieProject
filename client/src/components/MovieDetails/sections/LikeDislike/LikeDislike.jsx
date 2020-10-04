@@ -16,16 +16,15 @@ function LikeDislikes(props) {
     let variable = {};
 
     if (props.video) {
-        variable = { videoId: props.videoId, userId: props.userId }
+        variable = { videoId: props.videoId, userFrom: props.userId }
     } else {
-        variable = { commentId: props.commentId, userId: props.userId }
+        variable = { commentId: props.commentId, userFrom: props.userId }
     }
 
 
 
 
     useEffect(() => {
-        let mounted = true;
 
         Axios.post('/api/like/getLikes', variable)
             .then(response => {
@@ -37,7 +36,7 @@ function LikeDislikes(props) {
 
                     //if I already click this like button or not 
                     response.data.likes.map(like => {
-                        if (like.userId === props.userId) {
+                        if (like.userFrom === props.userId) {
                             setLikeAction('liked')
                         }
                     })
@@ -55,7 +54,7 @@ function LikeDislikes(props) {
 
                     //if I already click this like button or not 
                     response.data.dislikes.map(dislike => {
-                        if (dislike.userId === props.userId) {
+                        if (dislike.userFrom === props.userId) {
                             setDislikeAction('disliked')
                         }
                     })
@@ -63,8 +62,7 @@ function LikeDislikes(props) {
                     alert('Failed to get dislikes')
                 }
             })
-        return () => mounted = false;
-    }, [])
+    }, [variable, props.userId])
 
 
     const onLike = () => {

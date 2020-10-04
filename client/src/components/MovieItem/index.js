@@ -26,7 +26,7 @@ const MovieItem = React.memo(function MovieItem({ movie }) {
                             <CircularProgressbar strokeWidth='5' value={movie.vote_average * 10} text={movie.vote_average}
                                 styles={buildStyles({
                                     textSize: '36px',
-                                    pathColor: "rgba(0,40,161,1)"
+                                    pathColor: "rgba(24,144,255,1)"
                                 })}></CircularProgressbar>
                         </div>}
                     {!movie.vote_average &&

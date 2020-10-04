@@ -14,8 +14,11 @@ router.post("/getLikes", (req, res) => {
     let variable = {}
     if (req.body.videoId) {
         variable = { videoId: req.body.videoId }
-    } else {
+    } else if (req.body.commentId) {
         variable = { commentId: req.body.commentId }
+    }
+    else if (req.body.userFrom) {
+        variable = { userFrom: req.body.userFrom }
     }
 
     Like.find(variable)
@@ -33,8 +36,11 @@ router.post("/getDislikes", (req, res) => {
     let variable = {}
     if (req.body.videoId) {
         variable = { videoId: req.body.videoId }
-    } else {
+    } else if (req.body.commentId) {
         variable = { commentId: req.body.commentId }
+    }
+    else {
+        variable = { userFrom: req.body.userFrom }
     }
 
     Dislike.find(variable)
@@ -50,9 +56,9 @@ router.post("/upLike", (req, res) => {
 
     let variable = {}
     if (req.body.videoId) {
-        variable = { videoId: req.body.videoId, userId: req.body.userId }
+        variable = { videoId: req.body.videoId, userFrom: req.body.userFrom }
     } else {
-        variable = { commentId: req.body.commentId , userId: req.body.userId }
+        variable = { commentId: req.body.commentId, userFrom: req.body.userFrom }
     }
 
     const like = new Like(variable)
@@ -76,9 +82,9 @@ router.post("/unLike", (req, res) => {
 
     let variable = {}
     if (req.body.videoId) {
-        variable = { videoId: req.body.videoId, userId: req.body.userId }
+        variable = { videoId: req.body.videoId, userFrom: req.body.userFrom }
     } else {
-        variable = { commentId: req.body.commentId , userId: req.body.userId }
+        variable = { commentId: req.body.commentId, userFrom: req.body.userFrom }
     }
 
     Like.findOneAndDelete(variable)
@@ -94,16 +100,16 @@ router.post("/unDisLike", (req, res) => {
 
     let variable = {}
     if (req.body.videoId) {
-        variable = { videoId: req.body.videoId, userId: req.body.userId }
+        variable = { videoId: req.body.videoId, userFrom: req.body.userFrom }
     } else {
-        variable = { commentId: req.body.commentId , userId: req.body.userId }
+        variable = { commentId: req.body.commentId, userFrom: req.body.userFrom }
     }
 
     Dislike.findOneAndDelete(variable)
-    .exec((err, result) => {
-        if (err) return res.status(400).json({ success: false, err })
-        res.status(200).json({ success: true })
-    })
+        .exec((err, result) => {
+            if (err) return res.status(400).json({ success: false, err })
+            res.status(200).json({ success: true })
+        })
 
 
 })
@@ -112,11 +118,19 @@ router.post("/unDisLike", (req, res) => {
 
 router.post("/upDisLike", (req, res) => {
 
+
+    // let variable = {}
+    // if (req.body.videoId) {
+    //     variable = { videoId: req.body.videoId, userFrom: req.body.userFrom }
+    // } else {
+    //     variable = { commentId: req.body.commentId, userFrom: req.body.userFrom }
+    // }
+
     let variable = {}
     if (req.body.videoId) {
-        variable = { videoId: req.body.videoId, userId: req.body.userId }
+        variable = { videoId: req.body.videoId, userFrom: req.body.userFrom }
     } else {
-        variable = { commentId: req.body.commentId , userId: req.body.userId }
+        variable = { commentId: req.body.commentId, userFrom: req.body.userFrom }
     }
 
     const disLike = new Dislike(variable)

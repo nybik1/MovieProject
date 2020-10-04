@@ -23,7 +23,7 @@ function Comments(props) {
 
         const variables = {
             content: Comment,
-            writer: user.userData._id,
+            userFrom: user.userData._id,
             postId: props.postId
         }
 
@@ -47,7 +47,6 @@ function Comments(props) {
                 (!comment.responseTo &&
                     <React.Fragment key={comment.createdAt}>
                         <SingleComment comment={comment} postId={props.postId} refreshFunction={props.refreshFunction} />
-                        {/* <ReplyComment CommentLists={props.CommentLists} postId={props.postId} parentCommentId={comment._id} refreshFunction={props.refreshFunction} /> */}
                     </React.Fragment>
                 )
             ))}
@@ -67,7 +66,7 @@ function Comments(props) {
                     placeholder="write some comments"
                 />
                 <br />
-                <Button style={{ width: '20%', height: '52px' }} onClick={onSubmit}>Add comment</Button>
+                <Button type='primary' style={{ width: '20%', height: '52px' }} onClick={onSubmit}>Add comment</Button>
             </form>
 
         </div>

@@ -1,0 +1,151 @@
+.home__slider{
+    width: calc(100% - 10vw);
+    margin: auto;
+}
+
+.home__title{
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Arvo', serif;
+}
+
+
+.movie__wrapper{
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    &:hover .movie__info {
+        opacity: 1;
+    }
+
+    img{
+        width: 100%;
+    }
+}
+
+
+.movie__info{
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .8);
+    bottom: 0px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.movie__original_title{
+    position: absolute;
+    bottom: 0;
+}
+
+.movie__link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    background:  #f55b5b;
+    border-color:  #f55b5b;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    height: 50px;
+    width: 100px;
+    flex: 0 0 45%;
+    margin-left: auto;
+    padding: 4px 15px;
+    font-size: 20px;
+    border-radius: 2px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover{
+        background-color: #f27777;
+    }
+}
+
+.movie__genres{
+    font-size: 18px;
+}
+
+.movie__genre{
+   display: inline-block;
+   margin: 0;
+   padding: 5px;
+   border-radius: 10px;
+}
+
+
+.action{
+    background-color: blue;
+}
+
+.adventure{
+    background-color: green;
+
+}
+
+.animation{
+background-color: yellowgreen;
+}
+
+.comedy{
+    background-color: yellow;
+    color: black;
+
+}
+.crime{
+    background-color: purple;
+}
+.documentary{
+    background-color: rgb(12, 107, 131)
+}
+.drama{
+    background-color: red;
+}
+.family{
+    background-color: lightgreen;
+}
+.fantasy{
+    background-color: violet;
+}
+.history{
+    background-color: gold;
+}
+.horror{
+    background-color: darkgreen;
+}
+.music{
+    background-color: orange;
+}
+.mystery{
+    background-color: darkgrey;
+}
+.romance{
+    background-color: palevioletred;
+}
+.science{
+    background-color: silver;
+    color: black;
+}
+.tv{
+background-color: indigo;
+}
+.thriller{
+    background-color: rgb(109, 24, 31);
+}
+.war{
+    background-color: grey;
+}
+.western{
+    background-color: brown;
+}

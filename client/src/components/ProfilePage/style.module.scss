@@ -1,0 +1,33 @@
+
+
+
+.profile{
+
+    &__block{
+        width: 85%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: rgb(0,176,255);
+        background: linear-gradient(90deg, rgba(0,176,255,.5) 29%, rgba(190,5,5,.5) 82%);
+        padding: 10px 0px;
+        border-radius: 5px;
+        font-family: 'Arvo', serif;
+        color: #ffff;
+        font-size: 20px;
+}
+
+        &__avatar{
+            border-radius: 5px;
+            max-width: 150px;
+            height: 200px;
+        }
+
+        &__favorites{
+            max-width: calc(100vw - 20%);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto 0 ;
+        }
+}

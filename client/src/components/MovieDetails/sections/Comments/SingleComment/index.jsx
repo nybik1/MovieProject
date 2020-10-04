@@ -7,13 +7,15 @@ import moment from 'moment';
 function SingleComment(props) {
 
 
+
+
     return (
         <div>
             <div className={s.singleComment}>
                 <div className={s.singleComment__wrapper}>
                     <div className={s.singleComment__avatar}>
-                        <img src={props.comment.writer.image} alt="avatar" />
-                        <h4 className={s.singleComment__author}>Comment by: <strong>{props.comment.writer.username}</strong></h4>
+                        <img src={props.comment.userFrom.image} alt="avatar" />
+                        <h4 className={s.singleComment__author}>Comment by: <strong>{props.comment.userFrom.username}</strong></h4>
                     </div>
                     <div className={s.likeDislike__wrapper}>
                         <LikeDislikes comment commentId={props.comment._id} userId={localStorage.getItem('userId')} />
