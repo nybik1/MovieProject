@@ -22,7 +22,7 @@
     "cookie-parser": "^1.4.5",
     "core-util-is": "^1.0.2",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.5",
     "react-file-base64": "^1.0.3",
